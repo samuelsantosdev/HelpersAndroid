@@ -11,7 +11,7 @@ Apply a numeric mask for a EditText in TextWatcher.
 - setReverse = (boolean) Apply mask in reverse order, right to left (true), left to right (false)
 - apply = Apply the mask in EditText
 
-#####Example
+#####Example to set
 Insert this code in your class Activity -> method onCreate, with your EditText in 'findViewById(R.id.number)'
 
 	final EditText number = (EditText) findViewById(R.id.number);
@@ -40,4 +40,17 @@ Insert this code in your class Activity -> method onCreate, with your EditText i
             }
 
         });
+#####Example to get
+Get value, cast String to Double
 
+	String number = ((EditText) findViewById(R.id.porc)).getText().toString();
+        TextView result = (TextView) findViewById(R.id.result);
+
+        NumberFormat format = new NumberFormat();
+        format.setReverse(true);
+        format.setCurrency(true);
+
+        Double v = format.toDouble(number);
+        Double r = v * 10 / 100; //calc to result of 10%
+
+        result.setText(format.apply(r, "###.###.###,##"));
