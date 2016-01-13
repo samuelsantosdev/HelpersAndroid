@@ -12,7 +12,7 @@ Apply a numeric mask for a EditText in TextWatcher.
 - apply = Apply the mask in EditText
 
 #####Example
-onCreate
+Insert this code in your class Activity -> method onCreate, with your EditText in 'findViewById(R.id.number)'
 
 	final EditText number = (EditText) findViewById(R.id.number);
         number.addTextChangedListener(new TextWatcher() {
